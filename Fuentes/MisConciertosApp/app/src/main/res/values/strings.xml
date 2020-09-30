@@ -1,4 +1,9 @@
 <resources>
-    <string name="app_name">MisConciertosApp</string>
+    <string name="app_name">Mis Conciertos</string>
     <string name="titulo">Ingrese los datos del concierto</string>
+    <string name="labelArtista">Nombre del artista</string>
+    <string name="labelCalendario">Abrir Calendario</string>
+    <string name="labelGeneros">Generos Musicales</string>
+    <string name="labelValor">Valor entrada</string>
+    <string name="labelCalificacion">Calificación</string>
 </resources>

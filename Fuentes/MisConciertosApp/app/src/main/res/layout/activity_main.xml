@@ -6,27 +6,31 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical">
-
+    
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginTop="@dimen/marginBase">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/titulo"
             android:gravity="center"
             android:textSize="@dimen/tamanioTitulo"
-            ></TextView>
+            android:textStyle="bold"
+            android:textColor="@color/primary_text"/>
     </LinearLayout>
-
     <LinearLayout
         android:layout_marginTop="@dimen/marginBase"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/paddingLeft"
+        android:paddingRight="@dimen/paddingRight">
         <TextView
-            android:text="nombre del artista"
+            android:text="@string/labelArtista"
+            android:textColor="@color/primary_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"></TextView>
@@ -34,18 +38,28 @@
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="@dimen/paddingLeft"></EditText>
+            android:paddingLeft="@dimen/paddingLeft"
+            android:id="@+id/artistaTxt"></EditText>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/marginBase">
+        android:layout_marginTop="@dimen/marginBase"
+        android:paddingLeft="@dimen/paddingLeft"
+        android:paddingRight="@dimen/paddingRight">
 
         <TextView
+            android:textColor="@color/primary_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="Fecha"
+            android:text="Fecha"></TextView>
+        <TextView
+            android:textColor="@color/primary_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=""
             android:id="@+id/calendarioTxt"></TextView>
 
         <Button
@@ -53,20 +67,23 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/marginBase"
             android:layout_weight="1"
-            android:background="@color/colorPrimary"
-            android:text="Abrir Calendario"
+            android:textColor="@color/primary_text"
+            android:text="@string/labelCalendario"
             android:onClick="abrirCalendario"></Button>
     </LinearLayout>
     <LinearLayout
         android:layout_marginTop="@dimen/marginBase"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/paddingLeft"
+        android:paddingRight="@dimen/paddingRight">
         <TextView
-            android:text="Generos Musicales"
+            android:textColor="@color/primary_text"
+            android:text="@string/labelGeneros"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:id="@+id/spinnerTxt"></TextView>
+            android:id="@+id/generoTxt"></TextView>
         <Spinner
             android:id="@+id/spinnerGenero"
             android:layout_width="match_parent"
@@ -77,9 +94,12 @@
     <LinearLayout
         android:layout_marginTop="@dimen/marginBase"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/paddingLeft"
+        android:paddingRight="@dimen/paddingRight">
         <TextView
-            android:text="Valor entrada"
+            android:textColor="@color/primary_text"
+            android:text="@string/labelValor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"></TextView>
@@ -88,9 +108,67 @@
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="@dimen/paddingLeft"></EditText>
+            android:paddingLeft="@dimen/paddingLeft"
+            android:id="@+id/valorEntradaTxt"></EditText>
     </LinearLayout>
 
-   
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/marginBase"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingRight="@dimen/paddingRight"
+        android:paddingLeft="@dimen/paddingLeft">
+        <TextView
+            android:textColor="@color/primary_text"
+            android:text="@string/labelCalificacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/calificacionTxt"
+            ></TextView>
+        <Spinner
+            android:id="@+id/spinnerCalificacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"></Spinner>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/marginBase">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="agregar"
+            android:id="@+id/agregarBtn"
+            android:layout_marginStart="30pt"
+            android:layout_marginEnd="30pt"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@color/primary_light"></Button>
+    </LinearLayout>
+
+
+
+
+    <TextView
+        android:textColor="@color/primary_light"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marginBase"
+        android:text="Datos del Concierto"
+        android:gravity="center"
+        android:textSize="@dimen/tamanioTitulo" />
+    <ListView
+        android:id="@+id/conciertosLv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ></ListView>
+
 
 </LinearLayout>

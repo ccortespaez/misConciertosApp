@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="marginBase">30dp</dimen>
+    <dimen name="marginBase">20dp</dimen>
     <dimen name="tamanioTitulo">25sp</dimen>
-    <dimen name="paddingLeft">35dp</dimen>
+    <dimen name="paddingLeft">20dp</dimen>
+    <dimen name="paddingRight">20dp</dimen>
 </resources>
